@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.8s;
+}
+
+:root {
+    --main-font: "Raleway", sans-serif;
+    --color1: hsl(243, 100%, 93%);
+    --color2: hsl(229, 7%, 55%);
+    --color3: hsl(228, 56%, 26%);
+    --color4: hsl(229, 57%, 11%);
+    --grad1: hsl(6, 100%, 80%);
+    --grad2: hsl(335, 100%, 65%);
+    --white: hsl(255, 100%, 100%);
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--color4);
+    background-image: url(/images/bg-mobile.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+@media (min-width: 48rem) {
+    body {
+        background-image: url(/images/bg-desktop.png);
+        background-position: bottom;
+        background-size: 100% 50%;
+    }
+}
+
+main {
+    font-family: var(--main-font);
+    color: var(--white);
+    width: min(90%, 75rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 0.875rem;
+}
+@media (min-width: 48rem) {
+    main {
+        flex-direction: row;
+        align-items: flex-end;
+    }
+}
+
+.upload,
+.storage-graph {
+    background-color: var(--color3);
+    padding: 3rem;
+    border-radius: 0.5rem 7rem 0.5rem 0.5rem;
+}
+
+@media (min-width: 48rem) {
+    .upload {
+        padding-right: 8rem;
+    }
+}
+
+.process {
+    background-color: var(--color4);
+}
+
+.card {
+    margin-top: 2rem;
+    margin-right: 0.8rem;
+    border-radius: 0.5rem;
+    background-color: var(--color4);
+    height: 3rem;
+    width: 3rem;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.logo {
+    display: block;
+}
+
+.card img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.storage-graph {
+    border-radius: 0.5rem;
+    position: relative;
+}
+@media (min-width: 48rem) {
+    .storage-graph {
+        height: fit-content;
+        width: 50%;
+    }
+}
+
+.storage-graph h2 {
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
+.storage-graph h2 span {
+    font-weight: 700;
+}
+
+.data-left-graph {
+    margin: 1rem 0;
+    background-color: var(--color4);
+    border-radius: 1rem;
+    height: 1rem;
+    overflow: hidden;
+    display: flex;
+}
+
+.data-left-num {
+    margin-top: 1rem;
+    position: absolute;
+    background-color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    color: var(--color2);
+    text-transform: uppercase;
+    font-weight: 700;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+@media (min-width: 48rem) {
+    .data-left-num {
+        transform: unset;
+        left: unset;
+        right: 3rem;
+        top: -3rem;
+        border-radius: 0.5rem 0.5rem 0 0.5rem;
+    }
+
+    .data-left-num:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        border: 1rem solid transparent;
+        border-top-color: var(--white);
+        border-bottom: 0;
+        border-right: 0;
+        margin-bottom: -1rem;
+    }
+}
+
+.data-left-num span {
+    color: var(--color4);
+    font-size: 2rem;
+    vertical-align: middle;
+}
+
+.occupied {
+    width: 80%;
+    height: 1rem;
+    background-image: linear-gradient(to right, var(--grad1), var(--grad2));
+    border-radius: 1rem;
+}
+
+.ball {
+    height: 0.8rem;
+    width: 0.8rem;
+    background-color: var(--white);
+    border-radius: 50%;
+    float: right;
+    margin-top: 0.1rem;
+    margin-right: 0.1rem;
+}
+
+p span {
+    float: right;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
